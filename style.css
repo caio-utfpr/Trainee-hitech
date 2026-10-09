@@ -1,6 +1,11 @@
 /* ==========================================================================
-   RESET & FONTES
+   RESET, ROLAGEM SUAVE & FONTES
    ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Evita que o menu fixo fique por cima do início da seção */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +38,7 @@ body {
 }
 
 /* ==========================================================================
-   CABEÇALHO & LOGO (AJUSTADO)
+   CABEÇALHO & LOGO
    ========================================================================== */
 .header {
   background-color: #ffffff;
