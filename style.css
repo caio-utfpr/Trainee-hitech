@@ -24,26 +24,46 @@ body {
   padding: 60px 0;
 }
 
-/* LOGO ELETROTECH (Sem texto abaixo) */
-.brand-logo {
+/* ==========================================================================
+   DIMENSIONAMENTO DAS LOGOS EM SVG (CORREÇÃO)
+   ========================================================================== */
+.nav-logo {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   display: block;
-  object-fit: contain;
-  margin-bottom: 12px;
 }
 
 .hero-logo {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  display: block;
 }
 
-.sobre-logo {
-  width: 48px;
-  height: 48px;
+.hero-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.nav-logo {
-  width: 32px;
-  height: 32px;
+.hero-brand-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e5631;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e5631;
 }
 
 /* ==========================================================================
@@ -64,11 +84,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
 }
 
 .navbar ul {
@@ -92,8 +107,6 @@ body {
    HERO
    ========================================================================== */
 .hero {
-  max-width: 1100px;
-  margin: 0 auto;
   padding: 60px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -131,12 +144,22 @@ body {
 .hero-note {
   color: #718096;
   font-size: 0.85rem;
+  display: block;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .hero-image img {
   width: 100%;
-  border-radius: 16px;
+  height: 100%;
+  max-height: 400px;
   object-fit: cover;
+  display: block;
 }
 
 /* ==========================================================================
@@ -308,49 +331,8 @@ body {
   font-size: 0.8rem;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .hero, .faq-layout {
-    grid-template-columns: 1fr;
-  }
-  .grid-marcas, .grid-cards, .grid-cards-3 {
-    grid-template-columns: 1fr;
-  }
-  .navbar ul {
-    display: none;
-  }
-}
 /* ==========================================================================
-   ALINHAMENTO DA LOGO COM NOME ELETROTECH AO LADO
-   ========================================================================== */
-.hero-brand-group {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.hero-brand-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #1e5631;
-  letter-spacing: -0.5px;
-}
-
-.brand-header-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand-text {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1e5631;
-}
-
-/* ==========================================================================
-   BOTÃO FLUTUANTE DO WHATSAPP
+   BOTÃO FLUTUANTE WHATSAPP
    ========================================================================== */
 .whatsapp-float {
   position: fixed;
@@ -373,4 +355,17 @@ body {
 .whatsapp-float:hover {
   background-color: #143d22;
   transform: translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero, .faq-layout {
+    grid-template-columns: 1fr;
+  }
+  .grid-marcas, .grid-cards, .grid-cards-3 {
+    grid-template-columns: 1fr;
+  }
+  .navbar ul {
+    display: none;
+  }
 }
