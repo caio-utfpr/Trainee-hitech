@@ -1,401 +1,376 @@
 /* ==========================================================================
-   RESET E VARIÁVEIS GLOBAIS
+   RESET & ESTILOS BASE
    ========================================================================== */
-:root {
-  --primary: #1e4638;          /* Verde escuro da marca */
-  --primary-hover: #153328;    /* Verde mais escuro para hover */
-  --bg-main: #f9f9f6;          /* Fundo bege/off-white principal */
-  --bg-card: #ffffff;          /* Fundo dos cartões */
-  --text-main: #2b2b2b;        /* Texto principal */
-  --text-muted: #666666;       /* Texto secundário/suave */
-  --border-color: #e2e4dd;     /* Borda suave */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth; /* Rolagem suave ao clicar nos links do menu */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--bg-main);
-  color: var(--text-main);
+  background-color: #f7f9f6;
+  color: #2d3748;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* CONTAINER PADRÃO */
 .container {
-  max-width: 1140px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* TYPOGRAPHY */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: var(--text-main);
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-p {
-  color: var(--text-muted);
-}
-
-.tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.section-desc {
-  margin-bottom: 2rem;
-}
-
-.mt-4 {
-  margin-top: 2rem;
-}
-
-/* ==========================================================================
-   BOTÃO FLUTUANTE DO WHATSAPP (CANTO INFERIOR DIREITO)
-   ========================================================================== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: var(--primary);
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 1000;
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-.whatsapp-float:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-}
-
-.whatsapp-float span {
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.whatsapp-float small {
-  font-weight: 400;
-  opacity: 0.8;
-  display: block;
-}
-
-/* ==========================================================================
-   CABEÇALHO / NAVBAR
-   ========================================================================== */
-.header {
-  background-color: var(--bg-main);
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 15px 0;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo-title {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.logo-sub {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.nav-menu {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: var(--text-main);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-menu a:hover {
-  color: var(--primary);
-}
-
-/* ==========================================================================
-   BOTÕES GERAIS
-   ========================================================================== */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: all 0.2s;
-}
-
-.btn-primary {
-  background-color: var(--primary);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  border-color: var(--border-color);
-  color: var(--text-main);
-}
-
-.btn-secondary:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.btn-full {
-  width: 100%;
-}
-
-/* ==========================================================================
-   SEÇÕES & GRELHAS
-   ========================================================================== */
 .section {
   padding: 60px 0;
 }
 
-.bg-light {
-  background-color: #f1f2ec;
+/* LOGO ELETROTECH (Sem texto abaixo) */
+.brand-logo {
+  display: block;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.hero-logo {
+  width: 56px;
+  height: 56px;
 }
 
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+.sobre-logo {
+  width: 48px;
+  height: 48px;
 }
 
-/* HERO SECTION */
-.hero-section {
-  padding: 80px 0;
+.nav-logo {
+  width: 32px;
+  height: 32px;
 }
 
-.hero-container {
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #4a5568;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #1e5631;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
 }
 
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e5631;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #1a202c;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: #4a5568;
+  margin-bottom: 24px;
+}
+
 .hero-buttons {
   display: flex;
-  gap: 15px;
-  margin: 20px 0 10px 0;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .hero-note {
-  color: var(--text-muted);
-  font-size: 0.8rem;
+  color: #718096;
+  font-size: 0.85rem;
 }
 
 .hero-image img {
   width: 100%;
-  height: auto;
   border-radius: 16px;
   object-fit: cover;
 }
 
-/* CARTÕES (SOBRE, MARCAS, SERVIÇOS) */
-.about-card, .card-brand, .card-item, .card-service {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+/* ==========================================================================
+   BOTÕES & BADGES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
   border-radius: 8px;
-  padding: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.card-brand {
-  text-align: center;
-  font-weight: 500;
-  color: var(--text-muted);
+.btn-primary {
+  background-color: #1e5631;
+  color: #ffffff;
 }
 
-.card-item h4, .card-service h4 {
-  margin-bottom: 5px;
+.btn-primary:hover {
+  background-color: #143d22;
 }
 
-/* FAQ (SANFONA) */
-.faq-container {
+.btn-secondary {
+  background-color: #e8f0eb;
+  color: #1e5631;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.section-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e5631;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section-desc {
+  color: #718096;
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   CARDS & GRIDS
+   ========================================================================== */
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.grid-marcas {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.marca-item {
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  color: #a0aec0;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.flex-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.card-icon {
+  background: #e8f0eb;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
   gap: 40px;
 }
 
-.faq-list {
+.faq-items {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .faq-item {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 15px 20px;
-  cursor: pointer;
+  padding: 16px;
 }
 
 .faq-item summary {
   font-weight: 600;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: "+";
-  font-size: 1.2rem;
-}
-
-.faq-item[open] summary::after {
-  content: "−";
+  cursor: pointer;
 }
 
 .faq-item p {
-  margin-top: 10px;
-  font-size: 0.9rem;
+  margin-top: 12px;
+  color: #4a5568;
 }
 
-/* FORMULÁRIO */
-.form-container {
+/* ==========================================================================
+   FORMULÁRIO
+   ========================================================================== */
+.form-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
   max-width: 600px;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
-  font-size: 0.85rem;
+  display: block;
   font-weight: 600;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
+  margin-bottom: 8px;
   font-size: 0.9rem;
-  outline: none;
 }
 
-.form-group input:focus {
-  border-color: var(--primary);
-}
-
-.form-group small {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
+.form-group input,
 .form-group textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #cbd5e0;
   border-radius: 6px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  outline: none;
-  resize: vertical;
+  font-size: 1rem;
 }
 
-.form-group textarea:focus {
-  border-color: var(--primary);
+.form-group small {
+  display: block;
+  color: #718096;
+  margin-top: 4px;
+  font-size: 0.8rem;
 }
 
-/* RESPONSIVIDADE (MOBILE) */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  .hero-container, .faq-container {
+  .hero, .faq-layout {
     grid-template-columns: 1fr;
   }
-  
-  .nav-menu {
+  .grid-marcas, .grid-cards, .grid-cards-3 {
+    grid-template-columns: 1fr;
+  }
+  .navbar ul {
     display: none;
   }
 }
-/* RESPONSIVIDADE (MOBILE) */
-@media (max-width: 768px) {
-  .hero-container, .faq-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .nav-menu {
-    display: none; /* Menu simplificado para telas menores */
-  }
+/* ==========================================================================
+   ALINHAMENTO DA LOGO COM NOME ELETROTECH AO LADO
+   ========================================================================== */
+.hero-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.hero-brand-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e5631;
+  letter-spacing: -0.5px;
+}
+
+.brand-header-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e5631;
+}
+
+/* ==========================================================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1e5631;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.whatsapp-float:hover {
+  background-color: #143d22;
+  transform: translateY(-2px);
 }

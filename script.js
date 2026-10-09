@@ -28,10 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================================
-     ENVIO INTEGRADO
+     ENVIO SEM BLOQUEIO DE POPUP
      ========================================================================== */
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // 1. ABRIR A NOVA ABA IMEDIATAMENTE NO CLIQUE (Impede o navegador de bloquear)
+    const novaAba = window.open("about:blank", "_blank");
 
     btnSubmit.disabled = true;
     btnSubmit.innerText = "Enviando dados...";
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fotoMimeType: null
     };
 
+    // Lê a imagem em Base64 se anexada
     if (fotoInput.files.length > 0) {
       const file = fotoInput.files[0];
       payload.fotoNome = file.name;
@@ -63,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Envio assíncrono para o Apps Script
+    // Envia assincronamente para o Google Apps Script
     try {
       await fetch(googleScriptUrl, {
         method: "POST",
@@ -75,15 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Erro ao enviar dados para a planilha:", err);
     }
 
-    /* MENSAGEM LIMPA DO WHATSAPP */
+    // Mensagem limpa sem formatação pesada/asteriscos indesejados
     let mensagem = `Olá, gostaria de solicitar uma assistência técnica.\n\nNome: ${nome}\nProblema: ${descricao}`;
-
     const mensagemEncoded = encodeURIComponent(mensagem);
     const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${mensagemEncoded}`;
 
     btnSubmit.disabled = false;
     btnSubmit.innerText = "Enviar solicitação";
 
-    window.open(urlWhatsapp, "_blank");
+    // 2. DIRECIONA A ABA ABERTA PARA O WHATSAPP
+    if (novaAba) {
+      novaAba.location.href = urlWhatsapp;
+    } else {
+      window.location.href = urlWhatsapp;
+    }
   });
 });
